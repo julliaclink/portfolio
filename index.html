@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jullia Clink — Administração, produto e IA</title>
-  <meta name="description" content="Portfólio de Jullia Clink, estudante de Administração em Curitiba. Casos de produto e IA.">
+  <title>Jullia Clink — Automação de processos com IA</title>
+  <meta name="description" content="Portfólio de Jullia Clink, estudante de Administração em Curitiba. Automação de processos de negócio com IA: casos, método e ferramentas.">
   <!-- Remova a linha abaixo quando todos os [PREENCHER] estiverem resolvidos -->
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="style.css">
@@ -13,10 +13,10 @@
 <main>
 
   <header class="hero">
-    <p class="eyebrow">Curitiba · Administração</p>
+    <p class="eyebrow">Curitiba · Administração, UFPR</p>
     <h1>Jullia Clink</h1>
-    <p class="lead">Estudo Administração e gosto de transformar problemas do dia a dia em coisas que funcionam, com produto, IA e projetos.<br>
-    Aprendo construindo: o que está aqui são três projetos meus e o que decidi em cada um.</p>
+    <p class="lead">Estudo Administração e trabalho com automação de processos e IA em um estágio. Pego um processo manual, descubro onde o trabalho se repete e monto a solução com as ferramentas que a equipe já usa.<br>
+    Aqui estão os casos, o que a IA fez em cada um e o que eu decidi.</p>
     <ul class="links">
       <li><a href="https://www.linkedin.com/in/jullia-clink/">LinkedIn</a></li>
       <li><a href="https://github.com/julliaclink">GitHub</a></li>
@@ -24,105 +24,154 @@
     </ul>
   </header>
 
+  <section id="metodo">
+    <h2>Como eu abordo uma automação</h2>
+    <p class="section-intro">Cinco passos que repito, nesta ordem. Nem todo processo precisa de IA, e saber quando não precisa faz parte do trabalho.</p>
+    <ol class="steps">
+      <li><strong>Entender o processo como ele é.</strong> Converso com quem executa, mapeio os passos e vejo onde as informações são digitadas de novo, conferidas à mão ou se perdem.</li>
+      <li><strong>Achar o trabalho repetitivo.</strong> Escolho o que se repete, tem regra clara e causa erro ou atraso. Começo por um pedaço pequeno.</li>
+      <li><strong>Integrar o que já existe.</strong> Prefiro ligar as ferramentas que a equipe já usa a trocar tudo por um sistema novo.</li>
+      <li><strong>Aplicar IA só onde faz sentido.</strong> Onde a regra é fixa (um cálculo, uma validação), código simples é mais seguro. IA entra onde há texto solto, julgamento ou volume de leitura.</li>
+      <li><strong>Medir.</strong> Comparo antes e depois: tempo, erros, retrabalho. Se não consigo medir, digo que não medi.</li>
+    </ol>
+  </section>
+
   <section id="casos">
     <h2>Casos</h2>
-    <p class="section-intro">Três projetos, cada um contado do mesmo jeito: problema, o que fiz, como usei IA, resultado e o que aprendi.</p>
+    <p class="section-intro">Cada caso segue o mesmo roteiro: problema, o que construí, como usei IA, resultado e o que aprendi.</p>
 
-    <!-- CASO 1 -->
+    <!-- CASO 1: ESTÁGIO -->
     <article class="case">
-      <span class="tag">Caso 1</span>
-      <h3>Second Brain</h3>
-      <p>Um cofre pessoal em Obsidian, operado com Claude Code, com bot no Telegram, lembretes e índice.</p>
+      <span class="tag">Caso 1 · No meu estágio</span>
+      <h3>Registro de pesagem ligado ao monday.com</h3>
+      <p class="status">Aplicativo web com login, feito para uma indústria cliente. Dados e nomes do cliente foram omitidos. Status: <span class="todo">[PREENCHER: em uso, em teste ou entregue]</span></p>
 
       <h4>Problema</h4>
-      <p><span class="todo">[PREENCHER: o que te incomodava antes, ex.: onde ficavam suas anotações e tarefas]</span></p>
+      <p>A produção precisava registrar cada pesagem e levar esse dado para o quadro de gestão no monday.com. <span class="todo">[PREENCHER: como era antes, ex.: papel, planilha, digitação dupla; quantas pesagens por dia; quem fazia]</span></p>
 
       <h4>O que eu construí</h4>
       <ul>
-        <li>Cofre em Obsidian com a estrutura de pastas e notas: <span class="todo">[PREENCHER: como está organizado]</span></li>
-        <li>Bot no Telegram que <span class="todo">[PREENCHER: o que ele faz, ex.: captura notas, responde perguntas]</span></li>
-        <li>Lembretes: <span class="todo">[PREENCHER: que tipos e como disparam]</span></li>
-        <li>Índice: <span class="todo">[PREENCHER: o que ele lista e como se atualiza]</span></li>
+        <li>Um formulário que grava cada pesagem como um item no quadro do monday.com, usando a API da plataforma.</li>
+        <li>As listas de opções (tipo, operador, balança, cliente) são lidas do próprio quadro. Quem administra o quadro muda a lista lá e o formulário acompanha, sem mexer em código.</li>
+        <li>Um painel na tela calcula peso bruto (peso unitário × quantidade de folhas) e peso líquido (bruto − tara) antes de gravar, para o operador conferir na hora.</li>
+        <li>Campos obrigatórios e só números onde cabem números, validados na tela e no servidor.</li>
+        <li>Login com usuário e senha. O token do monday fica só no servidor e nunca chega ao navegador.</li>
+        <li>As automações seguintes do processo (saída de produção, entrada de estoque) rodam dentro do monday e usam o item criado. <span class="todo">[PREENCHER: confirme que essas automações foram você quem configurou]</span></li>
       </ul>
-      <p>Exemplos de uso: <span class="todo">[PREENCHER: 2 ou 3 situações reais]</span></p>
+      <p>Ficou de fora, de propósito, por enquanto: campos que mudam conforme o tipo de pesagem e a ligação com saídas de venda.</p>
 
       <h4>Como usei IA</h4>
-      <p><strong>Ferramentas:</strong> Claude Code, Obsidian, Telegram. <span class="todo">[PREENCHER: outras, se houver]</span></p>
-      <p><strong>O que a IA fez:</strong> <span class="todo">[PREENCHER]</span></p>
-      <p><strong>O que eu decidi:</strong> <span class="todo">[PREENCHER]</span></p>
+      <p><strong>Ferramentas:</strong> Claude Code para escrever e revisar o código; monday.com como sistema de destino.</p>
+      <p><strong>O que a IA fez:</strong> escreveu grande parte do código (servidor, tela, validações) a partir do que descrevi. <span class="todo">[PREENCHER: o que mais, ex.: revisão, testes]</span></p>
+      <p><strong>O que eu decidi:</strong> <span class="todo">[PREENCHER: o que partiu de você, ex.: quais campos são obrigatórios, que o cálculo não é gravado no monday, o que ficou para depois]</span></p>
+      <p>A IA não está dentro do processo. Pesagem tem regra fixa, então usei código simples e previsível. A IA acelerou a construção, não a decisão.</p>
 
       <h4>Resultado</h4>
-      <p><span class="todo">[PREENCHER: números reais, ex.: tempo de uso, nº de notas, lembretes por semana]</span></p>
+      <p><span class="todo">[PREENCHER: números reais, ex.: tempo por registro antes e depois, erros de digitação, nº de pesagens registradas, nº de usuários]</span></p>
 
       <h4>O que aprendi</h4>
-      <p><span class="todo">[PREENCHER]</span></p>
+      <p>O app liga cada campo à coluna do quadro pelo ID. Se alguém troca o tipo da coluna no monday, o ID muda e o formulário para de gravar. Por isso documentei esse ponto. <span class="todo">[PREENCHER: outro aprendizado seu, de processo ou de trabalho com o cliente]</span></p>
     </article>
 
-    <!-- CASO 2 -->
+    <!-- CASO 2: SECOND BRAIN -->
     <article class="case">
-      <span class="tag">Caso 2</span>
-      <h3>App do Bem</h3>
-      <p>Um app de organização pessoal.</p>
+      <span class="tag">Caso 2 · Projeto pessoal</span>
+      <h3>Second Brain</h3>
+      <p class="status">Meu cofre pessoal em Obsidian, operado com Claude Code. Parti de um kit open source (Claudesidian) e adaptei. Repositório privado, mostro numa conversa.</p>
 
       <h4>Problema</h4>
-      <p><span class="todo">[PREENCHER: qual problema e para quem]</span></p>
+      <p>Ideias, tarefas e compromissos ficavam espalhados em vários lugares, e nada me lembrava do que eu havia combinado comigo mesma. <span class="todo">[PREENCHER: confirme ou reescreva com suas palavras]</span></p>
 
       <h4>O que eu construí</h4>
-      <p><span class="todo">[PREENCHER: o que já existe de mais parecido e o que falta neles; em que estágio está (ideia, protótipo, código); telas ou link do protótipo]</span></p>
+      <ul>
+        <li>Uma caixa de entrada: tudo que capturo cai nela e uma rotina com IA classifica e move cada nota para o projeto certo, descartando o que não serve.</li>
+        <li>Lembretes pontuais e recorrentes que chegam no Telegram, enviados por um servidor.</li>
+        <li>Bot no Telegram para <span class="todo">[PREENCHER: o que ele faz, ex.: capturar notas, consultar o cofre]</span></li>
+        <li>Índice das notas e histórico de versões em Git.</li>
+      </ul>
 
       <h4>Como usei IA</h4>
-      <p><strong>Ferramentas:</strong> <span class="todo">[PREENCHER]</span></p>
-      <p><strong>O que a IA fez:</strong> <span class="todo">[PREENCHER]</span></p>
-      <p><strong>O que eu decidi:</strong> <span class="todo">[PREENCHER]</span></p>
+      <p><strong>Ferramentas:</strong> Claude Code, Obsidian, Telegram, Git.</p>
+      <p><strong>O que a IA fez:</strong> classifica e organiza as entradas, redige resumos e ajudou a montar os lembretes e o bot.</p>
+      <p><strong>O que eu decidi:</strong> <span class="todo">[PREENCHER: a estrutura de pastas, o que a IA pode mover sozinha e o que exige minha aprovação]</span></p>
 
       <h4>Resultado</h4>
-      <p><span class="todo">[PREENCHER: números reais, ex.: nº de testadores, feedbacks. Se ainda não há, diga o status com franqueza]</span></p>
+      <p><span class="todo">[PREENCHER: números reais, ex.: lembretes enviados por semana, notas processadas, tempo de uso]</span></p>
+
+      <h4>O que aprendi</h4>
+      <p>O servidor rodava em horário UTC e os lembretes chegavam fora de hora. Aprendi a testar a automação no ambiente real, e não só no meu computador. <span class="todo">[PREENCHER: confirme que esse foi um aprendizado seu]</span></p>
+    </article>
+
+    <!-- CASO 3: THE NOTEBOOK -->
+    <article class="case">
+      <span class="tag">Caso 3 · Projeto pessoal</span>
+      <h3>The Notebook</h3>
+      <p class="status">Organizador pessoal para celular e navegador. Repositório privado, mostro numa conversa.</p>
+
+      <h4>Problema</h4>
+      <p><span class="todo">[PREENCHER: o que os apps de organização que você testou não resolviam]</span></p>
+
+      <h4>O que eu construí</h4>
+      <ul>
+        <li>Áreas que eu mesma monto com anotações, listas de tarefas e tabelas, além de telas de Hoje, Tarefas e Agenda.</li>
+        <li>Funciona sem internet e sincroniza com um banco na nuvem (Supabase), com login por código e regras de acesso por usuário.</li>
+        <li>Anotações temporárias que se apagam sozinhas, busca, backup e testes automatizados das regras de negócio.</li>
+      </ul>
+
+      <h4>Como usei IA</h4>
+      <p><strong>Ferramentas:</strong> Claude Code, Expo / React Native, Supabase.</p>
+      <p><strong>O que a IA fez:</strong> <span class="todo">[PREENCHER]</span></p>
+      <p><strong>O que eu decidi:</strong> <span class="todo">[PREENCHER: ex.: escopo de cada fase, regra de sincronização]</span></p>
+
+      <h4>Resultado</h4>
+      <p><span class="todo">[PREENCHER: uso real, ex.: há quanto tempo você usa, quantas áreas e tarefas]</span></p>
 
       <h4>O que aprendi</h4>
       <p><span class="todo">[PREENCHER]</span></p>
     </article>
 
-    <!-- CASO 3 -->
+    <!-- CASO 4: SORTEIO -->
     <article class="case">
-      <span class="tag">Caso 3</span>
+      <span class="tag">Caso 4 · Projeto pessoal</span>
       <h3>Qual é o seu problema</h3>
-      <p>Um site simples que coleta problemas do dia a dia que poderiam virar apps.</p>
+      <p class="status">Site que sorteia um problema real do dia a dia para eu resolver construindo. <a href="https://github.com/julliaclink/sorteio-de-problemas">Código no GitHub</a>. Site no ar: <span class="todo">[PREENCHER: link]</span></p>
 
       <h4>Problema</h4>
-      <p><span class="todo">[PREENCHER: por que coletar problemas antes de construir]</span></p>
+      <p>Antes de automatizar, é preciso achar o trabalho manual escondido. Queria treinar esse olhar com problemas reais de pequenos negócios, como conciliar o caixa do dia ou acompanhar cobranças vencidas.</p>
 
       <h4>O que eu construí</h4>
-      <p><span class="todo">[PREENCHER: como funciona, link do site, status atual]</span></p>
+      <p>Uma roleta de problemas. Cada um traz quem sofre, qual é a dor, quem pagaria por uma solução e uma primeira versão possível, e só entram os que têm dados conferidos, com gráficos e os limites desses dados.</p>
 
       <h4>Como usei IA</h4>
       <p><strong>Ferramentas:</strong> <span class="todo">[PREENCHER]</span></p>
-      <p><strong>O que a IA fez:</strong> <span class="todo">[PREENCHER]</span></p>
-      <p><strong>O que eu decidi:</strong> <span class="todo">[PREENCHER]</span></p>
+      <p><strong>O que a IA fez:</strong> <span class="todo">[PREENCHER: ex.: pesquisa, rascunho dos problemas]</span></p>
+      <p><strong>O que eu decidi:</strong> <span class="todo">[PREENCHER: ex.: critério para um problema entrar]</span></p>
 
       <h4>Resultado</h4>
-      <p><span class="todo">[PREENCHER: nº de respostas e o que elas mostraram]</span></p>
+      <p><span class="todo">[PREENCHER: nº de problemas validados, nº de respostas ou acessos, se houver]</span></p>
 
       <h4>O que aprendi</h4>
       <p><span class="todo">[PREENCHER]</span></p>
     </article>
   </section>
 
-  <section id="ifood">
-    <h2>O que eu construiria no iFood</h2>
-    <p class="section-intro">Uma ideia, não uma promessa. Parto do que é público e do que vi nos meus projetos.</p>
-    <div class="idea">
-      <h3>Um resumo semanal em linguagem simples para o dono do restaurante</h3>
-      <p>Muitos donos de restaurante pequeno têm dados (vendas, avaliações, horários de pico), mas não têm tempo de transformá-los em decisão. A ideia é um assistente de IA que lê esses dados e manda, uma vez por semana, três coisas: o que mudou, por quê, e uma ação sugerida (ex.: "suas avaliações caem nas sextas à noite; o tempo de preparo é o motivo mais citado").</p>
-      <p><strong>O que a IA faria:</strong> resumir avaliações em temas, comparar semanas e redigir a recomendação em texto curto.<br>
-      <strong>O que continuaria humano:</strong> a decisão do restaurante e a revisão das recomendações pela equipe antes de qualquer automação.<br>
-      <strong>Como saberia se funcionou:</strong> o restaurante agiu na sugestão? A métrica que ela mexe (nota, cancelamentos, recompra) melhorou?</p>
-      <p><span class="todo">[PREENCHER: confirme se é essa a ideia que você quer defender, ou troque pela sua]</span></p>
-    </div>
+  <section id="antes">
+    <h2>Antes do estágio</h2>
+    <ul class="plain">
+      <li>Diretora de Projetos na JR Consultoria: liderei 2 gerentes de projetos e implementei o monday.com como ferramenta central de gestão, junto com a diretoria de vendas.</li>
+      <li>Consultora de Projetos: conduzi o ciclo completo de cerca de 10 projetos, com metodologias ágeis e Waterfall.</li>
+      <li>Coordenei a experiência de mais de 1.400 participantes na Feira de Estágios da UFPR, com NPS médio de 85.</li>
+    </ul>
+  </section>
+
+  <section id="ferramentas">
+    <h2>Ferramentas</h2>
+    <p>monday.com (inclusive via API) · Google Workspace · Claude Code · Obsidian · Telegram · Git e GitHub · Node.js e React · Python · Supabase · Canva</p>
   </section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p>Se quiser conversar sobre algum dos projetos, é só escrever.</p>
+    <p>Se quiser conversar sobre algum dos casos, é só escrever.</p>
     <p><span class="todo">[PREENCHER: e-mail público]</span> · <a href="https://www.linkedin.com/in/jullia-clink/">LinkedIn</a> · <a href="https://github.com/julliaclink">GitHub</a></p>
     <!-- Quando o PDF estiver pronto, troque por: <a class="btn" href="curriculo-jullia-clink.pdf" download>Baixar currículo (PDF)</a> -->
     <p><a class="btn" aria-disabled="true" role="link">Baixar currículo (PDF) <span class="todo">[PREENCHER]</span></a></p>
